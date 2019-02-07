@@ -49,7 +49,5 @@ public class BlockRotation : MonoBehaviour
         {
             fallSpeed += 10;
         }
-
-
     }
 }
