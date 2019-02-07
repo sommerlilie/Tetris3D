@@ -16,38 +16,34 @@ public class BlockRotation : MonoBehaviour
         Vector3 rot_h;
         Vector3 rot_x;
         Vector3 rot_sonderfall;
-        rot_v = new Vector3(rot.x, rot.y + 90, rot.z);
-        rot_h = new Vector3(rot.x, rot.y, rot.z + 90);
-        rot_x = new Vector3(rot.x + 90, rot.y, rot.z);
-        rot_sonderfall = new Vector3(-130, 0, 0);
+        rot_v = new Vector3(rot.x, rot.y + 90f, rot.z);
+        rot_h = new Vector3(rot.x, rot.y, rot.z + 90f);
 
-
-        if (Input.GetKeyDown(KeyCode.I))
+        // rotation around y axis
+        if (Input.GetKeyDown(KeyCode.K))
         {
             // transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 90f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rot_v);
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        // rotation around z axis
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            if (rot.x < 100 && rot.x > 98 && rot.y != 180)
+            /* if (rot.x < 100 && rot.x > 98 && rot.y != 180)
             {
-                print("#");
+                print("first");
                 transform.rotation = Quaternion.Euler(rot_x);
             }
             if (rot.y == 180 && rot.z < 100 && rot.z > 98)
             {
-                print("#");
+                print("second");
                 transform.rotation = Quaternion.Euler(rot_sonderfall);
             }
+            else
+            {*/
+            print("third");
             transform.rotation = Quaternion.Euler(rot_h);
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            transform.Rotate(0, 0, transform.rotation.z + 90f);
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            transform.Rotate(0, 0, transform.rotation.z - 90f);
+            //}
+
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {

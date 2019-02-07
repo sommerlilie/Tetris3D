@@ -9,9 +9,11 @@ public class Camera : MonoBehaviour
     public Transform target;
 
 
+
     void Update()
     {
-
+        Vector3 rot = transform.rotation.eulerAngles;
+        rot = new Vector3(rot.x, rot.y + 90f, rot.z);
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -26,7 +28,7 @@ public class Camera : MonoBehaviour
         }
 
 
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetKey(KeyCode.D))
         {
             transform.RotateAround(target.position, transform.up, -Input.GetAxis("Horizontal") * speed);
         }
