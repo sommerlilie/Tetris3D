@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\BlockMovement.cs" />
      <Compile Include="Assets\Scripts\BlockRotation.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Grid.cs" />
      <Compile Include="Assets\Scripts\Highscore.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">

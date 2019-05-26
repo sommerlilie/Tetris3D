@@ -1,14 +1,16 @@
 using UnityEngine;
 using System.Collections;
 
-public class BlockMovement : MonoBehaviour
-{
-    public Transform camera;
-    public Transform target;
+public class BlockMovement : MonoBehaviour {
+		Transform camera;
 
-    public int distance = 5;
-    float cameraValue;
-    float cameraValuez;
+	    float cameraValue;
+	    float cameraValuez;
+
+	void Start() {
+		 camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+	}
+
 
 
     void Update()
