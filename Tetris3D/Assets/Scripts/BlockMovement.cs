@@ -35,6 +35,7 @@ public class BlockMovement : MonoBehaviour
                 break;
             default:
                 cameraValue = 2;
+				Debug.LogError("No Matching Case");
                 break;
         }
 
@@ -42,8 +43,7 @@ public class BlockMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x - (1 * cameraValue), transform.position.y, transform.position.z - (1 * cameraValuez));
 
-            print(cameraValue);
-            print(camera.transform.eulerAngles.y);
+            Debug.Log(cameraValue);
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
@@ -51,6 +51,3 @@ public class BlockMovement : MonoBehaviour
         }
     }
 }
-
-
-
