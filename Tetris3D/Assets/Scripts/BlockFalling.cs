@@ -3,10 +3,12 @@ using UnityEngine;
 
 
 public class BlockFalling : MonoBehaviour
-{
+{	public Spawner sp = new Spawner();
     float t;
     float time = 1.5f;
 	bool moving = true;
+	void Start() {
+}
     void Update()
     {
 		if(moving) {
@@ -25,5 +27,13 @@ public class BlockFalling : MonoBehaviour
 		moving = false;
 		Debug.Log("Collided");
 		}
+	(gameObject.GetComponent( "BlockFalling" ) as MonoBehaviour).enabled = false;
+	(gameObject.GetComponent( "BlockMovement" ) as MonoBehaviour).enabled = false;
+	(gameObject.GetComponent( "BlockRotation" ) as MonoBehaviour).enabled = false;
+	Debug.LogError("Disabled Scripts");
+//	sp = GameObject.Find("Spawner").GetComponent<Spawner>();
+	sp.SpawnNext();
 	}
+
+
 }

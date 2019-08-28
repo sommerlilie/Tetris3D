@@ -1,71 +1,90 @@
 using System.Collections;
 using UnityEngine;
 
-public class Grid : MonoBehaviour {
-	public static int x = 10;
-    public static int y = 20;
-	public static int z = 20;
-    public static Transform[,,] grid = new Transform[x,y,z];
-
-	public static Vector2 roundVec3(Vector3 v) {
-    return new Vector3(Mathf.Round(v.x), Mathf.Round(v.y), Mathf.Round(v.z));
+public class Grid: MonoBehaviour {
+	public static int w = 10;
+	public static int h = 20;
+	public static int d = 10;
+	public static Transform[, , ] grid = new Transform[w, h, d];
+	
+	public static Vector3 RoundVec3(Vector3 v) {
+		return new Vector3((int)(v.x),
+			       (int)(v.y),
+			       (int)(v.z));
 	}
+	public static bool InsideBorder(Vector3 pos) {
+		return ((int)pos.x >= 0 &&
+		    (int)pos.x < w &&
+		    (int)pos.y >= 0) &&
+		    (int)pos.z >= 0 &&
+		    (int)pos.z < d;
+	}
+	
+	
 
-	public static void deleteRow(int y) {
-    for (int i = 0; i < x; i++) {
-		for(int j = 0; j < z; j++) {
-			Destroy(grid[x, y, z].gameObject);
-			grid[x, y, z] = null;
+	public static void DeletePlate(int p) {
+		for (int i = 0; i < w; i++) {
+			for (int j = 0; j < d; j++) {
+				grid[i, p, j] = null;
+				Destroy(grid[i, p, j].gameObject);
 			}
-    	}
+		}
 	}
-
-	public static void deleteColumn(int x) {
-    for (int i = 0; i < z; i++) {
-		for(int j = 0; j < y; j++) {
-			Destroy(grid[x, y, z].gameObject);
-			grid[x, y, z] = null;
+	
+	public static void DecreasePlate(int p) {
+		for (int i = 0; i < w; i++) {
+			for (int j = 0; j < d; j++) {
+				if (grid[i, p, d] != null) {
+					grid[i, p - 1, j] = grid[i, p, j];
+					grid[i, p, j] = null;
+					grid[i, p - 1, j].position += new Vector3(0, -1, 0);
+				}
 			}
-    	}
-	}
-
-	public static void decreaseOneRow(int y) {
-    for (int i = 0; i < x; x++) {
-		for(int j = 0; j < z; j++) {
-        if (grid[x, y,z] != null) {
-            // Move one towards bottom
-            grid[x, y-1, z] = grid[x, y, z];
-            grid[x, y, z] = null;
-
-            // Update Block position
-            grid[x, y-1, z].position += new Vector3(0, -1, 0);
-        		}
-    		}
 		}
 	}
 
-	public static void decreaseAllRows(int h) {
-    for (int i = h; i < y; i++)
-        decreaseOneRow(i);
+	public static void DecreasePlatesAbove(int p) {
+		for (int i = p; i < p; i++)
+		DecreasePlate(i);
 	}
-
-	public static bool isRowFull(int y) {
-    for (int i = 0; i < x; i++) {
-		for(int j = 0; j < z; j++) {
-			if (grid[x, y, z] == null)
-	            return false;
+	
+	public static bool IsPlateFull(int p) {
+		for(int i = 0; i < w; i++) {
+			for(int j = 0; j < d; j++) {
+				if (grid[i, p, j] == null)
+	            			return false;
 			}
 		}
-    	return true;
+    		return true;
 	}
-
-	public static bool isColumnFull(int z) {
-	for (int i = 0; i < x; i++) {
-		for(int j = 0; j < y; j++) {
-			if (grid[x, y, z] == null)
-				return false;
-			}
+	
+	public static void DeleteFullPlate() {
+		for (int i = 0; i < h; i++) {
+        		if (IsPlateFull(i)) {
+            			DeletePlate(i);
+            			DecreasePlatesAbove(i+1);
+            			--i;
+		        }
 		}
-		return true;
 	}
 }
+
+
+    
+    /*
+
+
+public static bool insideBorder(Vector3 pos) {
+    return ((int)pos.x >= 0 &&
+            (int)pos.x < x &&
+            (int)pos.z >= 0) &&
+	pos.z < z &&
+		pos.y >= 0;
+}
+
+
+
+
+}
+*/
+
