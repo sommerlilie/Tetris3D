@@ -10,7 +10,7 @@ public class Spawner: MonoBehaviour {
 	public void SpawnNext() {
 		int i = Random.Range(0, forms.Length);
 		// Spawn Group at center position
-		Instantiate(forms[i], new Vector3(0, 10, 0), Quaternion.identity);
+		Instantiate(forms[i], new Vector3(5, 10, 5), Quaternion.identity);
 		Debug.Log("Spawend Form");
 	}
 

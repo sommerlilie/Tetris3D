@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 public class Grid: MonoBehaviour {
-	public static int w = 4;
+	public static int w = 10;
 	public static int h = 20;
-	public static int d = 4;
+	public static int d = 10;
 	public static Transform[, , ] grid = new Transform[w, h, d];
 	
 	public static Vector3 RoundVec3(Vector3 v) {
