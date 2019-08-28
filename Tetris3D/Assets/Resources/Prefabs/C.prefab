@@ -67,16 +67,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1306381250751831440, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 778501636388035523, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8333106082784828490, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -86,6 +76,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333106081141926844, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d26a98ce5a780d394b9bbaee76f928d4, type: 2}
+    - target: {fileID: 8333106082627346106, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d26a98ce5a780d394b9bbaee76f928d4, type: 2}
+    - target: {fileID: 8333106082648119743, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d26a98ce5a780d394b9bbaee76f928d4, type: 2}
+    - target: {fileID: 8333106082787122858, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d26a98ce5a780d394b9bbaee76f928d4, type: 2}
+    - target: {fileID: 1306381250751831440, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 778501636388035523, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6717753607085929521, guid: c1d3f47bfd10d4edc9e0852fed0ff1a5, type: 3}

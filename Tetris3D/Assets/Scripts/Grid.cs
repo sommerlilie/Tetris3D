@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 public class Grid: MonoBehaviour {
-	public static int w = 10;
+	public static int w = 4;
 	public static int h = 20;
-	public static int d = 10;
+	public static int d = 4;
 	public static Transform[, , ] grid = new Transform[w, h, d];
 	
 	public static Vector3 RoundVec3(Vector3 v) {
@@ -25,8 +25,9 @@ public class Grid: MonoBehaviour {
 	public static void DeletePlate(int p) {
 		for (int i = 0; i < w; i++) {
 			for (int j = 0; j < d; j++) {
-				grid[i, p, j] = null;
 				Destroy(grid[i, p, j].gameObject);
+				grid[i, p, j] = null;
+				
 			}
 		}
 	}
@@ -61,6 +62,7 @@ public class Grid: MonoBehaviour {
 	public static void DeleteFullPlate() {
 		for (int i = 0; i < h; i++) {
         		if (IsPlateFull(i)) {
+        		Debug.LogError("++++++++++++++++++++++++++++++++++++++++++++");
             			DeletePlate(i);
             			DecreasePlatesAbove(i+1);
             			--i;

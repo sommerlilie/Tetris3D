@@ -10,7 +10,7 @@ public class GameController: MonoBehaviour {
 	[SerializeField]
 //	int j = 0;
 	float t;
-	float time = 1.5f;
+	float time = 0.5f;
 //	bool moving = true;
 
 	void Start() {
@@ -42,7 +42,7 @@ public class GameController: MonoBehaviour {
 
 					// Clear filled horizontal lines
 					Grid.DeleteFullPlate();
-
+					Debug.LogError("Delete Full");
 					// Spawn next Group
 					FindObjectOfType<Spawner>().SpawnNext();
 
