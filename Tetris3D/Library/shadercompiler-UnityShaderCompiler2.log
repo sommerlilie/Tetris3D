@@ -1,33 +1,6 @@
 Base path: '/home/sommerlilie/Unity/Hub/Editor/2019.2.2f1/Editor/Data', plugins path '/home/sommerlilie/Unity/Hub/Editor/2019.2.2f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=426309 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=74457 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=157331 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=137975 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=287090 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=216500 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=166332 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=150716 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=336075 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=164940 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=144696 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=297539 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=226189 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=174645 ok=1
-Cmd: compileComputeKernel
-  api=18 insize=15603 outsize=159105 ok=1
-Cmd: compileComputeKernel
+Cmd: compileSnippet
+  api=15 type=0 insize=1449 outsize=10434 kw=UNITY_PASS_FORWARDADD DIRECTIONAL SHADOWS_SCREEN pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+
+Quitting shader compiler process

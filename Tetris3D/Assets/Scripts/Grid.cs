@@ -12,6 +12,7 @@ public class Grid: MonoBehaviour {
 			       (int)(v.y),
 			       (int)(v.z));
 	}
+	
 	public static bool InsideBorder(Vector3 pos) {
 		return ((int)pos.x >= 0 &&
 		    (int)pos.x < w &&
@@ -20,8 +21,6 @@ public class Grid: MonoBehaviour {
 		    (int)pos.z < d;
 	}
 	
-	
-
 	public static void DeletePlate(int p) {
 		for (int i = 0; i < w; i++) {
 			for (int j = 0; j < d; j++) {
@@ -30,6 +29,7 @@ public class Grid: MonoBehaviour {
 				
 			}
 		}
+		Debug.Log("Deleted Plates!");
 	}
 	
 	public static void DecreasePlate(int p) {
@@ -41,12 +41,14 @@ public class Grid: MonoBehaviour {
 					grid[i, p - 1, j].position += new Vector3(0, -1, 0);
 				}
 			}
-		}
+		}	
 	}
 
 	public static void DecreasePlatesAbove(int p) {
-		for (int i = p; i < p; i++)
+		for (int i = p; i < p; i++) {
 		DecreasePlate(i);
+		}
+		Debug.Log("Decreased Plates!");	
 	}
 	
 	public static bool IsPlateFull(int p) {
@@ -56,13 +58,13 @@ public class Grid: MonoBehaviour {
 	            			return false;
 			}
 		}
+		Debug.Log("Plate full!");
     		return true;
 	}
 	
 	public static void DeleteFullPlate() {
 		for (int i = 0; i < h; i++) {
         		if (IsPlateFull(i)) {
-        		Debug.LogError("++++++++++++++++++++++++++++++++++++++++++++");
             			DeletePlate(i);
             			DecreasePlatesAbove(i+1);
             			--i;
@@ -70,23 +72,3 @@ public class Grid: MonoBehaviour {
 		}
 	}
 }
-
-
-    
-    /*
-
-
-public static bool insideBorder(Vector3 pos) {
-    return ((int)pos.x >= 0 &&
-            (int)pos.x < x &&
-            (int)pos.z >= 0) &&
-	pos.z < z &&
-		pos.y >= 0;
-}
-
-
-
-
-}
-*/
-

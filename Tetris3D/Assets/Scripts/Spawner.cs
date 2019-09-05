@@ -13,5 +13,4 @@ public class Spawner: MonoBehaviour {
 		Instantiate(forms[i], new Vector3(5, 10, 5), Quaternion.identity);
 		Debug.Log("Spawend Form");
 	}
-
 }
